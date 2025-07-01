@@ -50,7 +50,7 @@ export default function Home() {
                     </div>
                 </a>
 
-                <a href='/enderecos'>
+                <a href='/despachos'>
                     <div className='content-option'>
                         <img src={DespachoIcon} />
                         <h1>Despachos</h1>

@@ -29,7 +29,7 @@ export default function FormCargas() {
         let { data } = await axios.get(`http://localhost:5000/cliente`);
         setClientes(data);
 
-        if(data){
+        if(data.lenght > 0){
             setCliente(data[0].cliente_id)
             setEmail(data[0].email_cliente)
         }
@@ -39,7 +39,7 @@ export default function FormCargas() {
         let { data } = await axios.get(`http://localhost:5000/endereco`);
         setEnderecos(data);
 
-        if(data){
+        if(data.lenght > 0){
             setEndereco(data[0].endereco_id)
         }
     }
@@ -48,7 +48,7 @@ export default function FormCargas() {
         let { data } = await axios.get(`http://localhost:4000/produto`);
         setProdutos(data);
 
-        if(data){
+        if(data.lenght > 0){
             setProduto(data[0].endereco_id)
         }
     }

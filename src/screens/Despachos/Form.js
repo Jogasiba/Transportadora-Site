@@ -24,7 +24,7 @@ export default function FormDespachos() {
         let { data } = await axios.get(`http://localhost:5000/carga`);
         setCargas(data);
 
-        if(data){
+        if(data.lenght > 0){
             setCarga(data[0].carga_id)
         }
     }
@@ -33,13 +33,13 @@ export default function FormDespachos() {
         let { data } = await axios.get(`http://localhost:5000/motorista`);
         setMotoristas(data);
 
-        if(data){
+        if(data.lenght > 0){
             setMotorista(data[0].motorista_id)
         }
     }
 
     const selecionar = async () => {
-        let { data } = await axios.get(`http://localhost:5000/motorista/${id}`);
+        let { data } = await axios.get(`http://localhost:5000/carga/${id}`);
         setDtIni(data.nome);
         setDtFim(data.cpf);
         setStatus(data.cnh);
@@ -142,7 +142,7 @@ export default function FormDespachos() {
                     <label for='carga'>Carga</label>
                     <select id="carga" value={carga} onChange={handleCarga} >
                         {cargas && cargas.map((item, index) => (
-                            <option key={index} value={item.carga_id}>{item.carga_id} - {item.tipo_carga} - {item.status}</option>
+                            <option key={index} value={item.carga_id || 0}>{item.carga_id || 0} - {item.tipo_carga} - {item.status}</option>
                         ))}
                     </select>
                 </div>

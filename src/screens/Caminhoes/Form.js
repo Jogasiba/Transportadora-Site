@@ -23,7 +23,7 @@ export default function FormCaminhoes() {
         let { data } = await axios.get(`http://localhost:5000/motorista`);
         setMotoristas(data);
 
-        if(data){
+        if(data.lenght > 0){
             setMotorista(data[0].motorista_id)
         }
     }

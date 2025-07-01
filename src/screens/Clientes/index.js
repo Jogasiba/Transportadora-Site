@@ -17,7 +17,7 @@ export default function Clientes() {
         let { data } = await axios.get(`http://localhost:5000/endereco`);
         setEnderecos(data);
 
-        if(data){
+        if(data.lenght > 0){
             setEndereco(data[0].endereco_id);
         }
     }

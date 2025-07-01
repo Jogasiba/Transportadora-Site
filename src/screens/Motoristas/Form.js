@@ -24,7 +24,7 @@ export default function FormMotoristas() {
         let { data } = await axios.get(`http://localhost:5000/caminhao`);
         setCaminhoes(data);
 
-        if(data){
+        if(data.lenght > 0){
             setCaminhao(data[0].caminhao_id)
         }
     }
@@ -33,7 +33,7 @@ export default function FormMotoristas() {
         let { data } = await axios.get(`http://localhost:5000/endereco`);
         setEnderecos(data);
 
-        if(data){
+        if(data.lenght > 0){
             setEndereco(data[0].endereco_id)
         }
     }
