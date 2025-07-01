@@ -1,0 +1,68 @@
+.navbar {
+  background-color: #171717;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  justify-content: space-between;
+}
+
+.menu-button {
+  background-color: #171717;
+  z-index: 1;
+}
+
+.menu-button:hover {
+  cursor: pointer;
+}
+
+.menu-itens {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 20px;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 18px;
+  color: #FFF;
+  padding-top: 10px;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 20px;
+  color: #FFF;
+  padding-top: 10px;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  justify-self: flex-end;
+}
+
+.options {
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  .menu-itens {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+}

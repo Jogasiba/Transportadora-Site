@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 85%;
+  width: 100%;
+}
+
+.titulo-text{
+    font-size: 40px;
+    color: #FFF;
+    padding-top: 10px;
+}
+
+.titulo{
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.content-option{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #212121, #171717);
+    background: #171717;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.content-option:hover{
+    background: linear-gradient(to bottom, #171717, #212121);
+    cursor: pointer;
+}
+
+.content-option h1{
+    font-size: 30px;
+    text-align: center;
+}
+
+a{
+    display: flex;
+    gap: 10px;
+}

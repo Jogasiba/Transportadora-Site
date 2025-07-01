@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.titulo-text {
+  font-size: 40px;
+  color: #FFF;
+  padding-top: 10px;
+  flex: 8;
+}
+
+.titulo {
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.confirm{
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 2px solid #1ed760;
+  border-radius: 20px;
+  flex: 1;
+  transition: 0.3s all ease;
+}
+
+.confirm:hover{
+  background-color: #1ed760;
+  cursor: pointer;
+}
+
+.cancel{
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 2px solid #e63f32;
+  border-radius: 20px;
+  flex: 1;
+  transition: 0.3s all ease;
+}
+
+.cancel:hover{
+  background-color: #e63f32;
+  cursor: pointer;
+}
+
+label{
+    color: #FFF;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.form-input{
+    display: flex;
+    flex-direction: column;
+}
+
+input, select{
+    padding: 10px;
+    border: 2px solid #FFF;
+    background-color: #212121;
+    color: #FFF;
+    outline: none;
+    border-radius: 10px;
+}
+
+input::placeholder{
+    color: #FFF;
+}

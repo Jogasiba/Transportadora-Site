@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.titulo-text {
+  font-size: 40px;
+  color: #FFF;
+  padding-top: 10px;
+  flex: 8;
+}
+
+.titulo {
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+}
+
+.add{
+  padding: 5px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 2px solid #1ed760;
+  border-radius: 20px;
+  flex: 1;
+  transition: 0.3s all ease;
+}
+
+.add:hover{
+  background-color: #1ed760;
+  cursor: pointer;
+}
+
+table {
+  border: 1px solid #ffca28;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  color: #FFF;
+}
+
+th {
+  border-bottom: 1px solid #FFF;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  text-align: center;
+  padding: 20px;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+}
