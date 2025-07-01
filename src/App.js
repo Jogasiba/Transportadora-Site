@@ -6,9 +6,11 @@ import FormEnderecos from './screens/Enderecos/Form.js';
 import Motoristas from './screens/Motoristas/index.js';
 import FormMotoristas from './screens/Motoristas/Form.js';
 import FormCargas from './screens/Cargas/Form.js';
+import FormDespachos from './screens/Despachos/Form.js';
 import Cargas from './screens/Cargas/index.js';
 import Frete from './screens/Frete/index.js';
 import Clientes from './screens/Clientes/index.js';
+import Despachos from './screens/Despachos/index.js';
 import Menu from './components/Menu/index.js';
 import Login from './screens/Login/index.js';
 import Home from './screens/Home.js';
@@ -46,6 +48,10 @@ function App() {
             <Route path='/cargas' element={<PaginaSegura> <Cargas /> </PaginaSegura>} />
             <Route path='/formcargas' element={<PaginaSegura> <FormCargas /> </PaginaSegura>} />
             <Route path='/formcargas/:id' element={<PaginaSegura> <FormCargas /> </PaginaSegura>} />
+
+            <Route path='/despachos' element={<PaginaSegura> <Despachos /> </PaginaSegura>} />
+            <Route path='/formdespachos' element={<PaginaSegura> <FormDespachos /> </PaginaSegura>} />
+            <Route path='/formdespachos/:id' element={<PaginaSegura> <FormDespachos /> </PaginaSegura>} />
 
             <Route path='/frete' element={<PaginaSegura> <Frete /> </PaginaSegura>} />
             <Route path='/clientes' element={<Clientes />} />
