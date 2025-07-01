@@ -29,12 +29,12 @@ export default function Home() {
                     </div>
                 </a>
 
-                <a href='/clientes'>
+                {/* <a href='/clientes'>
                     <div className='content-option'>
                         <img src={ClienteIcon} />
                         <h1>Sua Conta</h1>
                     </div>
-                </a>
+                </a> */}
 
                 <a href='/enderecos'>
                     <div className='content-option'>

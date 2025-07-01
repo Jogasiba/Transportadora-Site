@@ -25,7 +25,7 @@ export default function Menu() {
           <a href='/'><h2>Home</h2></a>
           <a href='/caminhoes'><h2>Caminhões</h2></a>
           <a href='/motoristas'><h2>Motoristas</h2></a>
-          <a href='/caminhoes'><h2>Clientes</h2></a>
+          {/* <a href='/caminhoes'><h2>Clientes</h2></a> */}
           <a href='/enderecos'><h2>Endereços</h2></a>
           <a href='/cargas'><h2>Cargas</h2></a>
           <a href='/enderecos'><h2>Despachos</h2></a>
