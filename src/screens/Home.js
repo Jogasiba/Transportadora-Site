@@ -17,49 +17,49 @@ export default function Home() {
             <div className='content'>
                 <a href='/caminhoes'>
                     <div className='content-option'>
-                        <img src={CaminhaoIcon} style={{ width: '30%' }} />
+                        <img src={CaminhaoIcon} />
                         <h1>Caminhões</h1>
                     </div>
                 </a>
 
                 <a href='/motoristas'>
                     <div className='content-option'>
-                        <img src={MotoristaIcon} style={{ width: '30%' }} />
+                        <img src={MotoristaIcon} />
                         <h1>Motoristas</h1>
                     </div>
                 </a>
 
                 <a href='/clientes'>
                     <div className='content-option'>
-                        <img src={ClienteIcon} style={{ width: '30%' }} />
+                        <img src={ClienteIcon} />
                         <h1>Sua Conta</h1>
                     </div>
                 </a>
 
                 <a href='/enderecos'>
                     <div className='content-option'>
-                        <img src={EnderecoIcon} style={{ width: '30%' }} />
+                        <img src={EnderecoIcon} />
                         <h1>Endereços</h1>
                     </div>
                 </a>
 
                 <a href='/cargas'>
                     <div className='content-option'>
-                        <img src={CargaIcon} style={{ width: '30%' }} />
+                        <img src={CargaIcon} />
                         <h1>Cargas</h1>
                     </div>
                 </a>
 
                 <a href='/enderecos'>
                     <div className='content-option'>
-                        <img src={DespachoIcon} style={{ width: '30%' }} />
+                        <img src={DespachoIcon} />
                         <h1>Despachos</h1>
                     </div>
                 </a>
 
                 <a href='/frete'>
                     <div className='content-option'>
-                        <img src={FreteIcon} style={{ width: '30%' }} />
+                        <img src={FreteIcon} />
                         <h1>Calcular Frete</h1>
                     </div>
                 </a>
