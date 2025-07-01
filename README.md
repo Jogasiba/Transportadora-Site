@@ -10,7 +10,13 @@ Aplicação web desenvolvida em NODE.JS e REACT para a administração e coleta 
 
 ```bash
 git clone https://github.com/Jogasiba/Transportadora-API
+```
+
+```bash
 cd Transportadora-Site
+```
+
+```bash
 code .
 ```
 
