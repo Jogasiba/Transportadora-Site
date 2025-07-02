@@ -59,8 +59,8 @@ export default function Enderecos() {
                                     <td>{item.numero}</td>
                                     <td>{item.complemento}</td>
                                     <td>{item.cidade}</td>
-                                    <td><a href={`/formenderecos/${item.caminhao_id}`}><img src={EditIcon} style={{ width: 30 }} /></a></td>
-                                    <td><button onClick={() => excluir(item.caminhao_id)}><img src={DeleteIcon} style={{ width: 30 }} /></button></td>
+                                    <td><a href={`/formenderecos/${item.endereco_id}`}><img src={EditIcon} style={{ width: 30 }} /></a></td>
+                                    <td><button onClick={() => excluir(item.endereco_id)}><img src={DeleteIcon} style={{ width: 30 }} /></button></td>
                                 </tr>
                             ))}
                         </tbody>

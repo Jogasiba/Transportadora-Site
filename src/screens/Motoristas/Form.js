@@ -10,8 +10,8 @@ export default function FormMotoristas() {
     const [cpf, setCpf] = useState('');
     const [cnh, setCnh] = useState('');
     const [contato, setContato] = useState('');
-    const [endereco, setEndereco] = useState('');
-    const [caminhao, setCaminhao] = useState('');
+    const [endereco, setEndereco] = useState(null);
+    const [caminhao, setCaminhao] = useState(null);
 
     const [enderecos, setEnderecos] = useState([]);
     const [caminhoes, setCaminhoes] = useState([]);
@@ -24,7 +24,7 @@ export default function FormMotoristas() {
         let { data } = await axios.get(`http://localhost:5000/caminhao`);
         setCaminhoes(data);
 
-        if(data.lenght > 0){
+        if (data.length > 0) {
             setCaminhao(data[0].caminhao_id)
         }
     }
@@ -33,7 +33,7 @@ export default function FormMotoristas() {
         let { data } = await axios.get(`http://localhost:5000/endereco`);
         setEnderecos(data);
 
-        if(data.lenght > 0){
+        if (data.length > 0) {
             setEndereco(data[0].endereco_id)
         }
     }
@@ -58,6 +58,8 @@ export default function FormMotoristas() {
             "caminhao_id": caminhao,
         };
 
+        console.log(body);
+
         if (id) {
             await axios.put(`http://localhost:5000/motorista/${id}`, body);
         }
@@ -68,7 +70,8 @@ export default function FormMotoristas() {
     }
 
     const handleCaminhao = (e) => {
-        setCaminhao(e.target.value)
+        const valor = parseInt(e.target.value);
+        setCaminhao(valor);
     }
 
     const handleEndereco = (e) => {
@@ -141,6 +144,7 @@ export default function FormMotoristas() {
                 <div className="form-input" style={{ flex: 1 }}>
                     <label for='caminhao'>Caminhão</label>
                     <select id="caminhao" value={caminhao} onChange={handleCaminhao} >
+                        <option value={null}>Nenhum</option>
                         {caminhoes && caminhoes.map((item, index) => (
                             <option key={index} value={item.caminhao_id}>{item.caminhao_id} - {item.placa} - {item.modelo}</option>
                         ))}

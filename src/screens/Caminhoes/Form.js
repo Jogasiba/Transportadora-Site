@@ -10,8 +10,8 @@ export default function FormCaminhoes() {
     const [capacidade, setCapacidade] = useState('');
     const [status, setStatus] = useState(true);
     const [modelo, setModelo] = useState('');
-    const [tipo, setTipo] = useState('');
-    const [motorista, setMotorista] = useState('');
+    const [tipo, setTipo] = useState(null);
+    const [motorista, setMotorista] = useState(null);
 
     const [motoristas, setMotoristas] = useState([])
 
@@ -23,7 +23,7 @@ export default function FormCaminhoes() {
         let { data } = await axios.get(`http://localhost:5000/motorista`);
         setMotoristas(data);
 
-        if(data.lenght > 0){
+        if (data.length > 0) {
             setMotorista(data[0].motorista_id)
         }
     }
@@ -121,6 +121,7 @@ export default function FormCaminhoes() {
 
                 <div className='form-row'>
                     <div className="form-input" style={{ flex: 1 }}>
+                        <option value={null}>Nenhum</option>
                         <label for='tipo'>Tipo da Carroceria</label>
                         <input value={tipo} onChange={(text) => setTipo(text.target.value)} type="text" id="tipo" style={{ flex: 1 }} />
                     </div>
@@ -129,6 +130,7 @@ export default function FormCaminhoes() {
                 <div className="form-input" style={{ flex: 1 }}>
                     <label for='motorista'>Motorista</label>
                     <select id="motorista" value={motorista} onChange={handleMotorista} >
+                        <option value={null}>Nenhum</option>
                         {motoristas && motoristas.map((item, index) => (
                             <option key={index} value={item.motorista_id}>{item.motorista_id} - {item.nome}</option>
                         ))}

@@ -17,7 +17,7 @@ export default function Clientes() {
         let { data } = await axios.get(`http://localhost:5000/endereco`);
         setEnderecos(data);
 
-        if(data.lenght > 0){
+        if(data.length > 0){
             setEndereco(data[0].endereco_id);
         }
     }
@@ -40,7 +40,7 @@ export default function Clientes() {
             "nome": nome,
             "email": email,
             "senha": senha,
-            "endereco_id": endereco,
+            "endereco_id": endereco == '' ? null : endereco,
         };
 
         if (id){

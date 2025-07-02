@@ -11,9 +11,8 @@ export default function FormCargas() {
     const [peso, setPeso] = useState('');
     const [tipo_carga, setTipo] = useState('');
     const [status, setStatus] = useState('');
-    const [email_cliente, setEmail] = useState('');
-    const [cliente_id, setCliente] = useState('');
-    const [endereco_id, setEndereco] = useState('');
+    const [cliente_id, setCliente] = useState(null);
+    const [endereco_id, setEndereco] = useState(null);
 
     const [produto, setProduto] = useState('');
 
@@ -29,9 +28,8 @@ export default function FormCargas() {
         let { data } = await axios.get(`http://localhost:5000/cliente`);
         setClientes(data);
 
-        if(data.lenght > 0){
+        if(data.length > 0){
             setCliente(data[0].cliente_id)
-            setEmail(data[0].email_cliente)
         }
     }
 
@@ -39,7 +37,7 @@ export default function FormCargas() {
         let { data } = await axios.get(`http://localhost:5000/endereco`);
         setEnderecos(data);
 
-        if(data.lenght > 0){
+        if(data.length > 0){
             setEndereco(data[0].endereco_id)
         }
     }
@@ -48,7 +46,7 @@ export default function FormCargas() {
         let { data } = await axios.get(`http://localhost:4000/produto`);
         setProdutos(data);
 
-        if(data.lenght > 0){
+        if(data.length > 0){
             setProduto(data[0].endereco_id)
         }
     }
@@ -58,9 +56,8 @@ export default function FormCargas() {
         setOrigem(data.origem);
         setDestino(data.destino);
         setPeso(data.peso);
-        setTipo(data.tipo);
+        setTipo(data.tipo_carga);
         setStatus(data.status);
-        setEmail(data.email_cliente);
         setCliente(data.cliente_id);
         setEndereco(data.endereco_id);
     }
@@ -72,7 +69,6 @@ export default function FormCargas() {
             "peso": peso,
             "tipo_carga": tipo_carga,
             "status": status,
-            // "email_cliente": email_cliente,
             "cliente_id": cliente_id,
             "endereco_id": endereco_id,
         };
@@ -86,11 +82,6 @@ export default function FormCargas() {
             await axios.post(`http://localhost:5000/carga`, body);
         }
         voltar();
-    }
-
-    const insereEmail = (email) => {
-        console.log('email: ', email)
-        setEmail(email)
     }
 
     const handleCliente = (e) => {
@@ -185,9 +176,9 @@ export default function FormCargas() {
 
                 <div className="form-input" style={{ flex: 1 }}>
                     <label for='cliente'>Cliente</label>
-                    <select id="cliente" value={email_cliente} onChange={handleCliente} >
+                    <select id="cliente" value={cliente_id} onChange={handleCliente} >
                         {clientes && clientes.map((item, index) => (
-                            <option key={index} onClick={() => insereEmail(item.email)} value={item.cliente_id}>{item.cliente_id} - {item.nome}</option>
+                            <option key={index} value={item.cliente_id}>{item.cliente_id} - {item.nome}</option>
                         ))}
                     </select>
                 </div>

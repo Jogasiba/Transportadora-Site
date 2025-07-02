@@ -6,12 +6,12 @@ import { useNavigate, useParams } from "react-router-dom";
 export default function FormDespachos() {
     const navegacao = useNavigate();
     const { id } = useParams();
-    const [dt_ini, setDtIni] = useState('');
+    const [dt_inic, setDtIni] = useState('');
     const [dt_fim, setDtFim] = useState('');
     const [status, setStatus] = useState('');
     const [cidade, setCidade] = useState('');
-    const [motorista, setMotorista] = useState('');
-    const [carga, setCarga] = useState('');
+    const [motorista, setMotorista] = useState(null);
+    const [carga, setCarga] = useState(null);
 
     const [motoristas, setMotoristas] = useState([]);
     const [cargas, setCargas] = useState([]);
@@ -24,7 +24,7 @@ export default function FormDespachos() {
         let { data } = await axios.get(`http://localhost:5000/carga`);
         setCargas(data);
 
-        if(data.lenght > 0){
+        if(data.length > 0){
             setCarga(data[0].carga_id)
         }
     }
@@ -33,36 +33,38 @@ export default function FormDespachos() {
         let { data } = await axios.get(`http://localhost:5000/motorista`);
         setMotoristas(data);
 
-        if(data.lenght > 0){
+        if(data.length > 0){
             setMotorista(data[0].motorista_id)
         }
     }
 
     const selecionar = async () => {
-        let { data } = await axios.get(`http://localhost:5000/carga/${id}`);
-        setDtIni(data.nome);
-        setDtFim(data.cpf);
-        setStatus(data.cnh);
-        setCidade(data.contato);
+        let { data } = await axios.get(`http://localhost:5000/despacho/${id}`);
+        setDtIni(data.dt_inic);
+        setDtFim(data.dt_fim);
+        setStatus(data.status);
+        setCidade(data.cidade_despacho);
         setMotorista(data.motorista_id);
         setCarga(data.carga_id);
     }
 
     const salvar = async () => {
         let body = {
-            "dt_ini": dt_ini,
+            "dt_inic": dt_inic,
             "dt_fim": dt_fim,
             "status": status,
-            "cidade": cidade,
+            "cidade_despacho": cidade,
             "motorista_id": motorista,
             "carga_id": carga,
         };
 
+        console.log(body)
+
         if (id) {
-            await axios.put(`http://localhost:5000/motorista/${id}`, body);
+            await axios.put(`http://localhost:5000/despacho/${id}`, body);
         }
         else {
-            await axios.post(`http://localhost:5000/motorista`, body);
+            await axios.post(`http://localhost:5000/despacho`, body);
         }
         voltar();
     }
@@ -108,7 +110,7 @@ export default function FormDespachos() {
 
                     <div className="form-input" style={{ flex: 1 }}>
                         <label for='dtIni'>Data Inicial</label>
-                        <input value={dt_ini} onChange={(text) => setDtIni(text.target.value)} type="date" id="dtIni" style={{ flex: 1 }} />
+                        <input value={dt_inic} onChange={(text) => setDtIni(text.target.value)} type="date" id="dtIni" style={{ flex: 1 }} />
                     </div>
                 </div>
 

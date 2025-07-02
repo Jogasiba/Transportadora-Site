@@ -12,6 +12,7 @@ export default function Home() {
         <div className="container">
             <div className="titulo">
                 <h1 className='titulo-text'>ESCOLHA UMA OPÇÃO:</h1>
+                <h1 style={{ color: '#212121' }}>Obrigado pela atenção!</h1>
             </div>
 
             <div className='content'>
@@ -64,6 +65,7 @@ export default function Home() {
                     </div>
                 </a>
             </div>
+
         </div>
     );
 }
